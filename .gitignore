@@ -4,3 +4,6 @@ node_modules/
 .env.production
 nul
 *.log
+backend/target/
+backend/*.jar
+*.class
