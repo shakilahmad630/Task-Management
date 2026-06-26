@@ -27,6 +27,15 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         this.userRepository = userRepository;
     }
 
+    /**
+     * Skip JWT processing for OPTIONS preflight requests entirely.
+     * The high-priority CorsFilter handles those before this filter runs.
+     */
+    @Override
+    protected boolean shouldNotFilter(HttpServletRequest request) {
+        return "OPTIONS".equalsIgnoreCase(request.getMethod());
+    }
+
     @Override
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
@@ -56,3 +65,4 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         return null;
     }
 }
+
