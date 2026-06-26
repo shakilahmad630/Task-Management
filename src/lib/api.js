@@ -1,11 +1,17 @@
 import axios from 'axios'
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080/api'
+// In production (Vercel), requests go to /api/* which Next.js proxies to Render backend.
+// This eliminates CORS — browser only talks to same origin (Vercel).
+// In local dev, call the backend directly.
+const API_URL = typeof window !== 'undefined' && process.env.NODE_ENV === 'production'
+  ? '/api'
+  : (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8081')
 
 const api = axios.create({
   baseURL: API_URL,
   headers: { 'Content-Type': 'application/json' },
 })
+
 
 // Attach JWT token to every request
 api.interceptors.request.use((config) => {

@@ -20,7 +20,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          NEXT_PUBLIC_API_URL: ${{ vars.NEXT_PUBLIC_API_URL || 'https://task-mgmt-app.onrender.com' }}
+          NEXT_PUBLIC_API_URL: ${{ vars.NEXT_PUBLIC_API_URL || 'https://task-management-2-vaxa.onrender.com' }}
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
