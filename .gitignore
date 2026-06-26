@@ -1,0 +1,11 @@
+node_modules/
+.next/
+.env.local
+.env.production
+nul
+*.log
+backend/target/
+backend/*.jar
+*.class
+.vercel
+backend/.env
