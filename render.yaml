@@ -7,21 +7,10 @@ services:
       - key: PORT
         value: 8081
       - key: DB_URL
-        fromDatabase:
-          name: task-management-db
-          property: connectionString
+        value: jdbc:postgresql://aws-1-ap-southeast-2.pooler.supabase.com:6543/postgres?sslmode=require
       - key: DB_USER
-        fromDatabase:
-          name: task-management-db
-          property: user
+        value: postgres.nhhsepxupufeugvnzqtf
       - key: DB_PASSWORD
-        fromDatabase:
-          name: task-management-db
-          property: password
+        value: Root@8010166
       - key: JWT_SECRET
-        generateValue: true
-
-databases:
-  - name: task-management-db
-    databaseName: postgres
-    region: singapore
+        value: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970337336763979244226452948404D635166546A576E5A7234753778214125442A47
