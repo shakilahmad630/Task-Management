@@ -18,7 +18,7 @@ services:
     build: ./backend
     container_name: task-management-backend
     ports:
-      - "8080:8080"
+      - "8081:8081"
     environment:
       DB_URL: jdbc:postgresql://db:5432/task_management
       DB_USERNAME: postgres
