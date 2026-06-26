@@ -7,3 +7,4 @@ nul
 backend/target/
 backend/*.jar
 *.class
+.vercel
