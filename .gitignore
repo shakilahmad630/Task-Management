@@ -1,5 +1,7 @@
 node_modules/
 .next/
+frontend/node_modules/
+frontend/.next/
 .env.local
 .env.production
 nul
@@ -7,4 +9,5 @@ nul
 backend/target/
 backend/*.jar
 *.class
+frontend/out/
 .vercel

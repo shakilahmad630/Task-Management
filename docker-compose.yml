@@ -28,7 +28,7 @@ services:
     restart: unless-stopped
 
   frontend:
-    build: .
+    build: ./frontend
     container_name: task-management-frontend
     ports:
       - "3000:3000"
